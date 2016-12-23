@@ -2,11 +2,13 @@ import requests
 
 class Slack(object):
     def __init__(self, options):
-        self.webhook_url = options["webhook_url"]
-        self.channel = options["channel"]
+        self.webhook_url = options["slack"]["webhook_url"]
+        self.channel = options["slack"]["channel"]
 
     def post_message(self, data):
         payload = { "text": data, "channel": self.channel }
+
+        if
 
         print "Posting to Slack: " + self.webhook_url
         print "Payload: " + str(payload)

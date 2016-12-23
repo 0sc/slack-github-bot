@@ -13,8 +13,8 @@ from services.pull_request_service import PullRequestService
 if __name__ == "__main__":
     options = OptionsParser(sys.argv[1:]).options
 
-    github_handler = Github(options["github"])
-    slack_handler = Slack(options["slack"])
+    github_handler = Github(options)
+    slack_handler = Slack(options)
 
     service = PullRequestService(
         github_handler,

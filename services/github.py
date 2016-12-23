@@ -4,9 +4,9 @@ class Github(object):
     HOSTNAME = "https://api.github.com"
 
     def __init__(self, options):
-        self.repo_owner = options["repo_owner"]
-        self.repo_name = options["repo_owner"]
-        self.access_token = options["access_token"]
+        self.repo_owner = options["github"]["repo_owner"]
+        self.repo_name = options["github"]["repo_owner"]
+        self.access_token = options["github"]["access_token"]
 
     def request(self, path):
         payload = { "access_token": self.access_token }
