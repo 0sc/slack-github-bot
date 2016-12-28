@@ -5,10 +5,15 @@ class Slack(object):
         self.webhook_url = options["slack"]["webhook_url"]
         self.channel = options["slack"]["channel"]
 
+        self.dry_run = options["dry_run"]
+
     def post_message(self, data):
         payload = { "text": data, "channel": self.channel }
 
-        if
+        if self.dry_run:
+            print "Dry Run mode - Skipping posting to slack"
+            print "Payload: " + str(payload)
+            exit(1)
 
         print "Posting to Slack: " + self.webhook_url
         print "Payload: " + str(payload)
