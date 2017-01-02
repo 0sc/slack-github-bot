@@ -5,7 +5,7 @@ class Github(object):
 
     def __init__(self, options):
         self.repo_owner = options["repo_owner"]
-        self.repo_name = options["repo_owner"]
+        self.repo_name = options["repo_name"]
         self.access_token = options["access_token"]
 
     def request(self, path):
